@@ -18,13 +18,7 @@
 				document.documentElement.style.setProperty('--mouseX', `${clientX}`)
 				document.documentElement.style.setProperty('--mouseY', `${clientY}`)
 
-
 			})
-
-
-
-
-			
 
 		})
 
@@ -43,7 +37,29 @@
 	
 		<div class="min-h-screen dark:bg-[#012A35] dark:text-white">
 
-			<div class="container mx-auto px-4 pt-20">
+			<div id="navBar" class="h-20 w-full z-50">
+
+				<div class="container mx-auto px-4">
+
+					<div class="flex justify-center h-20 w-full relative z-50">
+
+						<div id="avatar" class="h-32 w-32 flex justify-center items-center  dark:border-white rounded-full dark:bg-[#012A35] absolute inset-y-0 -bottom-16">
+							<img src="@/assets/me.webp" class="h-24" alt="">
+						</div>
+
+					</div>
+
+				</div>
+
+
+			</div>
+
+			<div class="container mx-auto px-4">
+
+				<!-- <button>
+					<icon:akar-icons:moon-fill class="h-8 w-8" v-if="true"/>
+					<icon:akar-icons:sun-fill class="h-8 w-8" v-else/>
+				</button> -->
 
 				<div class="flex bg-white/60 px-5 lg:px-10 py-16 dark:bg-[#001E26] flex-wrap justify-center  dark:border-white shadow-lg rounded-3xl dark:text-white relative">
 	
@@ -178,9 +194,9 @@
 
 					</div>
 
-					<div id="avatar" class="h-32 w-32 flex justify-center items-center  dark:border-white rounded-full dark:bg-[#012A35] absolute inset-y-0 -top-16">
+					<!-- <div id="avatar" class="h-32 w-32 flex justify-center items-center  dark:border-white rounded-full dark:bg-[#012A35] absolute inset-y-0 -top-16">
 						<img src="@/assets/me.webp" class="h-24" alt="">
-					</div>
+					</div> -->
 
 					<!-- <div class="mousePosition"></div> -->
 	
