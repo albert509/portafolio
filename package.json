@@ -13,7 +13,8 @@
 	"author": "Luis Alberto",
 	"license": "MIT",
 	"scripts": {
-		"dev": "vite --host",
+		"dev": "vite",
+		"dev-host": "vite --host",
 		"build": "vite build",
 		"serve": "vite preview",
 		"https-preview": "serve dist"

@@ -15,16 +15,19 @@
 			// let touchendX = 0
 				
 			// function checkDirection() {
-			// 	if (touchendX < touchstartX) voltea()
-			// 	if (touchendX > touchstartX) alert('swiped right!')
+			// 	// if (touchendX < touchstartX) voltea()
+			// 	if ((touchendX < touchstartX) && Math.abs(touchendX - touchstartX) > 100) voltea('left')
+			// 	if ((touchendX > touchstartX) && Math.abs(touchendX - touchstartX) > 100) voltea('right')
 			// }
 
 			// 	document.addEventListener('touchstart', e => {
-			// 	touchstartX = e.changedTouches[0].screenX
+			// 		touchstartX = e.changedTouches[0].screenX
+			// 		console.log(touchstartX)
 			// 	})
 
 			// 	document.addEventListener('touchend', e => {
 			// 	touchendX = e.changedTouches[0].screenX
+			// 	console.log(touchendX)
 			// 	checkDirection()
 			// })
 
@@ -53,13 +56,25 @@
 
 	})
 
-		let voltea = () => {
-			
-			animate('#carta', { rotateY: -180 }, { easing: spring() })
-			animate('#avatar', { rotateY: -180 }, { easing: spring() })
+		let voltea = ( direccion: string ) => {
 
-			animate('#cartaBack', { rotateY: 0 }, { easing: spring() })
-			animate('#avatar2', { rotateY: 0 }, { easing: spring() })
+			if(direccion === 'right'){
+
+				animate('#carta', { rotateY: 0 }, { easing: spring() })
+				animate('#avatar', { rotateY: 0 }, { easing: spring() })
+
+				animate('#cartaBack', { rotateY: 180 }, { easing: spring() })
+				animate('#avatar2', { rotateY: 180 }, { easing: spring() })
+
+			}else{
+
+				animate('#carta', { rotateY: -180 }, { easing: spring() })
+				animate('#avatar', { rotateY: -180 }, { easing: spring() })
+
+				animate('#cartaBack', { rotateY: 0 }, { easing: spring() })
+				animate('#avatar2', { rotateY: 0 }, { easing: spring() })
+
+			}
 
 			// window.scrollTo(0, 0);
 
@@ -71,19 +86,14 @@
 
 <template>
 	
-		<div class="min-h-screen dark:bg-[#012A35] dark:text-white overflow-x-hidden scroll-smooth">
+		<div class="min-h-screen dark:bg-[#012A35] dark:text-white scroll-smooth">
 
 
-			<div class="container mx-auto px-4 pt-20">
-
-				<!-- <button>
-					<icon:akar-icons:moon-fill class="h-8 w-8" v-if="true"/>
-					<icon:akar-icons:sun-fill class="h-8 w-8" v-else/>
-				</button> -->
+			<div class="container mx-auto px-4 pt-14 pb-6">
 
 				<div class="grid grid-cols-1 grid-rows-1 perspect">
 
-					<div id="carta" class="col-start-1 row-start-1 flex bg-white/60 px-5 lg:px-10 py-16 dark:bg-[#001E26] flex-wrap justify-center  dark:border-white shadow-lg rounded-3xl dark:text-white relative no-backface">
+					<div id="carta" class="col-start-1 row-start-1 flex bg-white/60 px-5 lg:px-5 pt-16 dark:bg-[#001E26] flex-wrap justify-center  dark:border-white shadow-lg rounded-3xl dark:text-white relative no-backface">
 		
 						<div class="lg:p-10 w-full lg:w-1/2">
 		
@@ -107,9 +117,12 @@
 									<h3 class="text-2xl mt-10 lg:mt-5 text-center lg:text-left">
 										Contact
 									</h3>
-									<h4 class="underline underline-offset-4 text-center lg:text-left">
-										albertalmonte89@gmail.com
-									</h4>
+
+									<a href="mailto:albertalmonte89@gmail.com">
+										<h4 class="underline underline-offset-4 text-center lg:text-left hover:font-bold">
+											albertalmonte89@gmail.com
+										</h4>
+									</a>
 								</div>
 	
 	
@@ -118,32 +131,32 @@
 	
 									<div class=" ">
 	
-										<div class="ani border-2 border-black dark:border-white hover:bg-white hover:text-black select-none cursor-pointer p-3 rounded-xl text-center">
+										<a href="https://www.linkedin.com/in/luis-almonte-25b4a6232" target="_blank" class="ani block border-2 border-black dark:border-white hover:bg-white hover:text-black select-none cursor-pointer p-3 rounded-xl text-center">
 											<icon:akar-icons:linkedin-box-fill class="inline"/>
-										</div>
+										</a>
 	
 									</div>
 	
 									<div class=" ">
 	
-										<div class="ani border-2 border-black dark:border-white hover:bg-white hover:text-black select-none cursor-pointer p-3 rounded-xl text-center">
+										<a href="https://codepen.io/albert509" target="_blank" class="ani block border-2 border-black dark:border-white hover:bg-white hover:text-black select-none cursor-pointer p-3 rounded-xl text-center">
 											<icon:akar-icons:codepen-fill class="inline"/>
-										</div>
+										</a>
 									</div>
 	
 									<div class=" ">
-										<div class="ani border-2 border-black dark:border-white hover:bg-white hover:text-black select-none cursor-pointer p-3 rounded-xl text-center">
+										<a href="https://twitter.com/albert_almonte" target="_blank" class="ani block border-2 border-black dark:border-white hover:bg-white hover:text-black select-none cursor-pointer p-3 rounded-xl text-center">
 											<icon:akar-icons:twitter-fill class="inline"/>
-										</div>
+										</a>
 	
 									</div>
 	
 	
 									<div class=" ">
 	
-										<div class="ani border-2 border-black dark:border-white hover:bg-white hover:text-black select-none cursor-pointer p-3 rounded-xl text-center">
+										<a href="https://github.com/albert509" target="_blank" class="ani block border-2 border-black dark:border-white hover:bg-white hover:text-black select-none cursor-pointer p-3 rounded-xl text-center">
 											<icon:akar-icons:github-fill class="inline"/>
-										</div>
+										</a>
 									</div>
 	
 								</div>
@@ -152,13 +165,69 @@
 	
 						<div class="lg:p-10 w-full lg:w-1/2">
 	
-							<div class="" v-for="a in 1">
+							<div class="">
 	
-								<h1 class="text-4xl mb-10 mt-10 lg:mt-0 font-bold">
+								<h1 class="text-3xl lg:text-4xl text-center lg:text-left mb-5 mt-10 lg:mt-0 font-bold">
 									My skills cloud
 								</h1>
 	
 								<div class="flex flex-wrap text-black justify-center lg:justify-start">
+	
+									<div class="skill rounded-lg shadow-md mb-5 m-1">
+										<img src="@/assets/skillIcons/JavaScript.svg" class="h-14 lg:h-20" alt="">
+									</div>
+
+									<div class="skill rounded-lg shadow-md mb-5 m-1">
+										<img src="@/assets/skillIcons/HTML.svg" class="h-14 lg:h-20" alt="">
+									</div>
+
+									<div class="skill rounded-lg shadow-md mb-5 m-1">
+										<img src="@/assets/skillIcons/CSS.svg" class="h-14 lg:h-20" alt="">
+									</div>
+
+									<div class="skill rounded-lg shadow-md mb-5 m-1">
+										<img src="@/assets/skillIcons/VueJS-Dark.svg" class="h-14 lg:h-20" alt="">
+									</div>
+
+									<div class="skill rounded-lg shadow-md mb-5 m-1">
+										<img src="@/assets/skillIcons/NuxtJS-Dark.svg" class="h-14 lg:h-20" alt="">
+									</div>
+
+									<div class="skill rounded-lg shadow-md mb-5 m-1">
+										<img src="@/assets/skillIcons/TailwindCSS-Dark.svg" class="h-14 lg:h-20" alt="">
+									</div>
+
+									<div class="skill rounded-lg shadow-md mb-5 m-1">
+										<img src="@/assets/skillIcons/Firebase-Dark.svg" class="h-14 lg:h-20" alt="">
+									</div>
+
+									<div class="skill rounded-lg shadow-md mb-5 m-1">
+										<img src="@/assets/skillIcons/NodeJS-Dark.svg" class="h-14 lg:h-20" alt="">
+									</div>
+
+									<div class="skill rounded-lg shadow-md mb-5 m-1">
+										<img src="@/assets/skillIcons/MongoDB.svg" class="h-14 lg:h-20" alt="">
+									</div>
+
+									<div class="skill rounded-lg shadow-md mb-5 m-1">
+										<img src="@/assets/skillIcons/TypeScript.svg" class="h-14 lg:h-20" alt="">
+									</div>
+
+									<div class="skill rounded-lg shadow-md mb-5 m-1">
+										<img src="@/assets/skillIcons/CS.svg" class="h-14 lg:h-20" alt="">
+									</div>
+
+									<div class="skill rounded-lg shadow-md mb-5 m-1">
+										<img src="@/assets/skillIcons/DotNet.svg" class="h-14 lg:h-20" alt="">
+									</div>
+
+									<div class="skill rounded-lg shadow-md mb-5 m-1">
+										<img src="@/assets/skillIcons/Sass.svg" class="h-14 lg:h-20" alt="">
+									</div>
+									
+								</div>
+								
+								<!-- <div class="flex flex-wrap text-black justify-center lg:justify-start">
 	
 									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
 										<icon:teenyicons:javascript-solid class="inline"/> Javascript
@@ -210,20 +279,14 @@
 										<icon:bi:filetype-sql class="inline"/> SQL databases
 									</div>
 									
-								</div>
+								</div> -->
 
 	
 							</div>
 	
 						</div>
-
-						<div class="w-full flex justify-center mt-10">
-							<button @click="voltea" class="border-2 border-black dark:border-white hover:bg-white hover:text-black select-none cursor-pointer p-3 rounded-xl text-center">
-								See my work <icon:akar-icons:arrow-right class="inline"/>
-							</button>
-						</div>
 	
-						<div id="avatar" class="h-32 w-32 flex justify-center items-center border-2  dark:border-white rounded-full dark:bg-[#012A35] absolute inset-y-0 -top-16 no-backface">
+						<div id="avatar" class="h-32 w-32 flex justify-center items-center  dark:border-white rounded-full dark:bg-[#012A35] absolute inset-y-0 -top-16 no-backface">
 							<img src="@/assets/me.webp" class="h-24" alt="">
 						</div>
 	
@@ -237,63 +300,52 @@
 		
 							<div class="flex flex-col justify-center ">
 		
-								<!-- <div class="h-52 w-52 bg-gray-600 rounded-full"></div> -->
-		
 								<h1 class="text-2xl lg:text-4xl font-bold text-center lg:text-left">
-									My work
+									My web dev journey
 								</h1>
-	
-	
-	
 							
 							</div>
 						</div>
 	
-						<div class="lg:p-10 w-full lg:w-1/2">
-	
-							
-	
-						</div>
-	
-						<div id="avatar2" class="h-32 w-32 flex justify-center items-center border-2  dark:border-white rounded-full dark:bg-[#012A35] absolute inset-y-0 -top-16 no-backface rotate-To-back">
+						<div id="avatar2" class="h-32 w-32 flex justify-center items-center  dark:border-white rounded-full dark:bg-[#012A35] absolute inset-y-0 -top-16 no-backface rotate-To-back">
 							<img src="@/assets/me.webp" class="h-24" alt="">
 						</div>
-	
-						<!-- <div class="mousePosition"></div> -->
 		
 					</div>
 				</div>
 
 
-				<!-- <div class="flex flex-wrap">
+				<!-- <div class="flex flex-wrap mt-5">
 
-					<div class="w-full lg:w-1/2 mt-5 ">
+					<div class="w-full p-5">
 
-						<h1 class="text-5xl  font-bold" @click="voltea">
-							👨🏾‍💻 My work
+						<h1 class="text-4xl lg:text-5xl text-center font-bold">
+							My work 👨🏾‍💻 
 						</h1>
 
 					</div>
 
-
 				</div> -->
 
-				<!-- <div class="flex">
+				<!-- <div class="flex flex-wrap">
 
-					<div class="w-1/2">
-						<iframe height="688.6666870117188" style="width: 100%;" scrolling="no" title="Interactive GameBoy ( HTML &amp; CSS )" src="https://codepen.io/albert509/embed/dydPzZa?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-						See the Pen <a href="https://codepen.io/albert509/pen/dydPzZa">
-						Interactive GameBoy ( HTML &amp; CSS )</a> by Luis Alberto (<a href="https://codepen.io/albert509">@albert509</a>)
-						on <a href="https://codepen.io">CodePen</a>.
-						</iframe>
+					<div class="w-full lg:w-1/2 p-5" v-for="n in 5">
+
+						<div class="w-full h-80 dark:bg-[#001E26] rounded-3xl relative">
+
+							<div class="">
+
+							</div>
+
+						</div>
+
 					</div>
 
 				</div> -->
 
+
+
 			</div>
-
-
-
 
 		</div>
 
