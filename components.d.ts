@@ -6,10 +6,10 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppHeader: typeof import('./src/components/AppHeader.vue')['default']
+    'Icon:akarIcons:arrowRight': typeof import('~icons/akar-icons/arrow-right')['default']
     'Icon:akarIcons:codepenFill': typeof import('~icons/akar-icons/codepen-fill')['default']
     'Icon:akarIcons:githubFill': typeof import('~icons/akar-icons/github-fill')['default']
     'Icon:akarIcons:linkedinBoxFill': typeof import('~icons/akar-icons/linkedin-box-fill')['default']
-    'Icon:akarIcons:moon': typeof import('~icons/akar-icons/moon')['default']
     'Icon:akarIcons:moonFill': typeof import('~icons/akar-icons/moon-fill')['default']
     'Icon:akarIcons:sunFill': typeof import('~icons/akar-icons/sun-fill')['default']
     'Icon:akarIcons:twitterFill': typeof import('~icons/akar-icons/twitter-fill')['default']
