@@ -7,6 +7,34 @@
 		title: '',
 	});
 
+	let projects = ref([
+		{
+			title: "TictacDos",
+			Thumb: "/projects/tictacdos.png",
+			labels: ["Javascript", "Vuejs", "Tailwind"]
+		},
+		{
+			title: "Landing Sanchte",
+			Thumb: "/projects/sanchte.png",
+			labels: ["Javascript", "Vuejs", "Tailwind"]
+		},
+		{
+			title: "Landing pinturas Shalom",
+			Thumb: "/projects/shalom.png",
+			labels: ["Javascript", "Vuejs", "Tailwind"]
+		},
+		{
+			title: "landing Geotracking",
+			Thumb: "/projects/geo.png",
+			labels: ["Javascript", "Vuejs", "Tailwind"]
+		},
+		{
+			title: "landing Lugotech",
+			Thumb: "/projects/lugotech.png",
+			labels: ["Javascript", "Vuejs", "Tailwind"]
+		},
+	])
+
 	onMounted(async () => {
 
 		nextTick(() => {
@@ -88,8 +116,10 @@
 	
 		<div class="min-h-screen dark:bg-[#012A35] dark:text-white scroll-smooth">
 
+			<!-- <h1 class="fixed top-0 left-0 origin-bottom-left rotate-90 text-7xl font-bold text-slate-700/10">|||||||||||||||||||||||||</h1> -->
 
-			<div class="container mx-auto px-4 pt-14 pb-6">
+
+			<div class="container mx-auto px-4 pt-20 pb-6">
 
 				<div class="grid grid-cols-1 grid-rows-1 perspect">
 
@@ -226,68 +256,13 @@
 									</div>
 									
 								</div>
-								
-								<!-- <div class="flex flex-wrap text-black justify-center lg:justify-start">
-	
-									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
-										<icon:teenyicons:javascript-solid class="inline"/> Javascript
-									</div>
-									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
-										<icon:teenyicons:html5-solid class="inline"/> HTML
-									</div>
-									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
-										<icon:teenyicons:css3-solid class="inline"/> CSS
-									</div>
-	
-									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
-										<icon:teenyicons:vue-solid class="inline"/> Vuejs
-									</div>
-									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
-										<icon:teenyicons:nuxtjs-solid class="inline"/> Nuxtjs
-									</div>
-									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
-										<icon:mdi:vuetify class="inline"/> Vuetify
-									</div>
-									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
-										<icon:teenyicons:tailwind-solid class="inline"/> TailwindCss
-									</div>
-	
-	
-									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
-										<icon:teenyicons:firebase-solid class="inline"/> Firebase
-									</div>
-	
-	
-	
-									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
-										<icon:teenyicons:nodejs-solid class="inline"/> NodeJs
-									</div>
-									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
-										<icon:teenyicons:mongodb-solid class="inline"/> MongoDb
-									</div>
 									
-	
-									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
-										<icon:teenyicons:typescript-solid class="inline"/> MongoDb
-									</div>
-	
-									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
-										<icon:teenyicons:c-sharp-solid class="inline"/> C#
-									</div>
-	
-									<div class="skill rounded-lg bg-white  shadow-md mb-5 p-3 m-1">
-										<icon:bi:filetype-sql class="inline"/> SQL databases
-									</div>
-									
-								</div> -->
-
-	
 							</div>
 	
 						</div>
 	
-						<div id="avatar" class="h-32 w-32 flex justify-center items-center  dark:border-white rounded-full dark:bg-[#012A35] absolute inset-y-0 -top-16 no-backface">
-							<img src="@/assets/me.webp" class="h-24" alt="">
+						<div id="avatar" class="h-32 w-32 flex justify-center items-center border-4 dark:border-[#001E26] rounded-full dark:bg-[#012A35] absolute inset-y-0 -top-16 no-backface">
+							<img src="@/assets/me.png" class="h-20" alt="">
 						</div>
 	
 						<!-- <div class="mousePosition"></div> -->
@@ -308,40 +283,107 @@
 						</div>
 	
 						<div id="avatar2" class="h-32 w-32 flex justify-center items-center  dark:border-white rounded-full dark:bg-[#012A35] absolute inset-y-0 -top-16 no-backface rotate-To-back">
-							<img src="@/assets/me.webp" class="h-24" alt="">
+							<img src="@/assets/me.png" class="h-24" alt="">
 						</div>
 		
 					</div>
 				</div>
 
 
-				<!-- <div class="flex flex-wrap mt-5">
+				<div class="flex flex-wrap mt-14 mb-10 relative">
 
-					<div class="w-full p-5">
+					<div class="absolute top-0 lg:-top-10 left-0 lg:left-10 w-full select-none h-32 overflow-y-hidden">
+						<h1 class="origin-bottom-left text-6xl lg:text-9xl font-bold text-slate-700/20">Some of my work</h1>
+					</div>
 
-						<h1 class="text-4xl lg:text-5xl text-center font-bold">
-							My work 👨🏾‍💻 
+					<div class="w-full lg:w-1/2 p-5 lg:border-l-4 border-slate-700 ">
+
+						<h1 class="text-4xl lg:text-5xl font-bold relative">
+							My work 
 						</h1>
+
+						<p class="relative text-2xl text-slate-500">
+							These are some of the projects I`ve built for clients and at work.
+						</p>
 
 					</div>
 
-				</div> -->
+				</div>
 
-				<!-- <div class="flex flex-wrap">
+				<div class="flex flex-wrap">
 
-					<div class="w-full lg:w-1/2 p-5" v-for="n in 5">
+					<div class="w-full lg:w-6/12 lg:p-5 py-5 " v-for="(project, i) in projects" :key="i">
 
-						<div class="w-full h-80 dark:bg-[#001E26] rounded-3xl relative">
-
-							<div class="">
-
+						<div class="relative">
+							<div class="w-full dark:bg-[#001E26] rounded-xl relative overflow-hidden group shadow-lg shadow-[#294952]">
+								<img :src="project.Thumb" class=" object-cover" alt="">
 							</div>
-
+	
+							<div class="py-3 px-1">
+	
+								<h3 class="text-lg font-bold">
+									{{ project.title }}
+								</h3>
+	
+								<div class="flex flex-wrap gap-2 text-xs mt-3">
+	
+									<div v-for="label in project.labels" class="p-1 rounded-lg dark:bg-[#001E26]">
+										{{ label }}
+									</div>
+	
+								</div>
+							</div>
 						</div>
 
 					</div>
+				
+				</div>
 
-				</div> -->
+
+
+				<div class="flex flex-wrap mt-14 mb-10 relative">
+
+					<div class="absolute top-0 lg:-top-10 left-0 lg:left-10 w-full select-none h-32 overflow-y-hidden">
+						<h1 class="origin-bottom-left text-6xl lg:text-9xl font-bold text-slate-700/20">
+							Just for fun
+						</h1>
+					</div>
+
+					<div class="w-full lg:w-1/2 p-5 lg:border-l-4 border-slate-700 ">
+
+						<h1 class="text-4xl lg:text-5xl font-bold relative">
+							Fun with code
+						</h1>
+
+						<p class="relative text-2xl text-slate-500">
+							Things I do just to have fun, most of the visual are done with just css.
+						</p>
+
+					</div>
+
+				</div>
+
+				<div class="grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden">
+
+					<div class="">
+						<rick-card></rick-card>
+					</div>
+
+					<div class="">
+						<krilin-sticker></krilin-sticker>
+					</div>
+
+					<div>
+						<eva></eva>
+					</div>
+
+					<div class="">
+						<gameboy-css></gameboy-css>
+					</div>
+
+
+
+				</div>
 
 
 

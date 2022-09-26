@@ -5,12 +5,14 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AppHeader: typeof import('./src/components/AppHeader.vue')['default']
+    Eva: typeof import('./src/components/prototypes/eva.vue')['default']
+    GameboyCss: typeof import('./src/components/prototypes/gameboyCss.vue')['default']
     'Icon:akarIcons:codepenFill': typeof import('~icons/akar-icons/codepen-fill')['default']
     'Icon:akarIcons:githubFill': typeof import('~icons/akar-icons/github-fill')['default']
     'Icon:akarIcons:linkedinBoxFill': typeof import('~icons/akar-icons/linkedin-box-fill')['default']
     'Icon:akarIcons:twitterFill': typeof import('~icons/akar-icons/twitter-fill')['default']
-    'Icon:mdi:at': typeof import('~icons/mdi/at')['default']
+    KrilinSticker: typeof import('./src/components/prototypes/krilinSticker.vue')['default']
+    RickCard: typeof import('./src/components/prototypes/rickCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
