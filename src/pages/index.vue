@@ -292,7 +292,7 @@
 
 				<div class="flex flex-wrap mt-14 mb-10 relative">
 
-					<div class="absolute top-0 lg:-top-10 left-0 lg:left-10 w-full select-none h-32 overflow-y-hidden">
+					<div class="absolute top-0 lg:-top-10 left-0 lg:left-10 select-none h-32 overflow-y-hidden">
 						<h1 class="origin-bottom-left text-6xl lg:text-9xl font-bold text-slate-700/20">Some of my work</h1>
 					</div>
 
@@ -343,7 +343,7 @@
 
 				<div class="flex flex-wrap mt-14 mb-10 relative">
 
-					<div class="absolute top-0 lg:-top-10 left-0 lg:left-10 w-full select-none h-32 overflow-y-hidden">
+					<div class="absolute top-0 lg:-top-10 left-0 lg:left-10 select-none h-32 overflow-y-hidden">
 						<h1 class="origin-bottom-left text-6xl lg:text-9xl font-bold text-slate-700/20">
 							Just for fun
 						</h1>
