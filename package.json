@@ -1,5 +1,5 @@
 {
-	"name": "@albert509/tailvue",
+	"name": "portfolio",
 	"description": "My personal portfolio",
 	"version": "1.0.0",
 	"main": "src/main.ts",
