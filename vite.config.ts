@@ -58,9 +58,9 @@ export default defineConfig({
 				'apple-touch-icon.png',
 			],
 			manifest: {
-				name: 'tailvue',
-				short_name: 'tailvue',
-				description: 'Opinionated vite template with TailwindCSS',
+				name: 'Luis Albert Almonte Mendez',
+				short_name: 'albert',
+				description: 'My projects and prototypes lives in here!',
 				theme_color: '#076AE0',
 				icons: [
 					{

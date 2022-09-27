@@ -1,17 +1,12 @@
 <script setup lang="ts">
-
-	// import { animate, spring,  } from "motion"
-	import { animate, spring, stagger, timeline  } from 'motion'
 	
-	useHead({
-		title: '',
-	});
+	import { animate, spring, stagger  } from 'motion'
 
 	let projects = ref([
 		{
 			title: "TictacDos",
 			Thumb: "/projects/tictacdos.png",
-			labels: ["Javascript", "Vuejs", "Tailwind"]
+			labels: ["Vuejs", "Tailwind", "WebRTC", "Drag&Drop"]
 		},
 		{
 			title: "Landing Sanchte",
@@ -26,16 +21,48 @@
 		{
 			title: "landing Geotracking",
 			Thumb: "/projects/geo.png",
-			labels: ["Javascript", "Vuejs", "Tailwind"]
+			labels: ["Vuejs", "Threejs", "Sass"]
 		},
 		{
 			title: "landing Lugotech",
 			Thumb: "/projects/lugotech.png",
-			labels: ["Javascript", "Vuejs", "Tailwind"]
+			labels: ["Javascript", "Vuejs", "Fullpagejs"]
 		},
 	])
 
+	let rickCard = defineAsyncComponent(() => import('@/components/prototypes/rickCard.vue'))
+	let eva = defineAsyncComponent(() => import('@/components/prototypes/eva.vue'))
+	let krilinSticker = defineAsyncComponent(() => import('@/components/prototypes/krilinSticker.vue'))
+	let gameboyCss = defineAsyncComponent(() => import('@/components/prototypes/gameboyCss.vue'))
+
+	const expTitle = ref();
+	let expInView = ref<boolean>(false);
+
+	const Projectsection = ref();
+	let projectsInView = ref<boolean>(false);
+
 	onMounted(async () => {
+
+		useIntersectionObserver(expTitle, ([{ isIntersecting }], observerElement) => {
+			expInView.value = isIntersecting;
+			
+			if(isIntersecting){
+				console.log("Intersectoooo")
+				observerElement.disconnect();
+			}
+				
+		})
+
+		useIntersectionObserver(Projectsection, ([{ isIntersecting }], observerElement) => {
+			projectsInView.value = isIntersecting;
+			
+			if(isIntersecting){
+				console.log("Intersectoooo")
+				observerElement.disconnect();
+			}
+				
+		})
+
 
 		nextTick(() => {
 
@@ -104,10 +131,6 @@
 
 			}
 
-			// window.scrollTo(0, 0);
-
-			// animate('#cartaBack', { transform: ['rotateX(0deg)'] }, { easing: spring() })
-			// animate('#avatar2', { transform: ['rotateX(0deg)'] }, { easing: spring() })
 		}
 
 </script>
@@ -310,38 +333,42 @@
 
 				</div>
 
-				<div class="flex flex-wrap">
+				<div ref="Projectsection"></div>
 
-					<div class="w-full lg:w-6/12 lg:p-5 py-5 " v-for="(project, i) in projects" :key="i">
-
-						<div class="relative">
-							<div class="w-full dark:bg-[#001E26] rounded-xl relative overflow-hidden group shadow-lg shadow-[#294952]">
-								<img :src="project.Thumb" class=" object-cover" alt="">
-							</div>
+				<transition name="slide-fade">
+					<div v-if="projectsInView" class="flex flex-wrap">
 	
-							<div class="py-3 px-1">
+						<div class="w-full lg:w-6/12 lg:p-5 py-5 " v-for="(project, i) in projects" :key="i">
 	
-								<h3 class="text-lg font-bold">
-									{{ project.title }}
-								</h3>
-	
-								<div class="flex flex-wrap gap-2 text-xs mt-3">
-	
-									<div v-for="label in project.labels" class="p-1 rounded-lg dark:bg-[#001E26]">
-										{{ label }}
+							<div class="relative">
+								<div class="w-full dark:bg-[#001E26] rounded-xl relative overflow-hidden group shadow-lg shadow-[#294952]">
+									<img :src="project.Thumb" class=" object-cover" alt="">
+								</div>
+		
+								<div class="py-3 px-1">
+		
+									<h3 class="text-lg font-bold">
+										{{ project.title }}
+									</h3>
+		
+									<div class="flex flex-wrap gap-2 text-xs mt-3">
+		
+										<div v-for="label in project.labels" class="p-1 rounded-lg dark:bg-[#001E26]">
+											{{ label }}
+										</div>
+		
 									</div>
-	
 								</div>
 							</div>
+	
 						</div>
-
+					
 					</div>
-				
-				</div>
+				</transition>
 
 
 
-				<div class="flex flex-wrap mt-14 mb-10 relative">
+				<div ref="expTitle" class="flex flex-wrap mt-14 mb-10 relative">
 
 					<div class="absolute top-0 lg:-top-10 left-0 lg:left-10 select-none h-32 overflow-y-hidden">
 						<h1 class="origin-bottom-left text-6xl lg:text-9xl font-bold text-slate-700/20">
@@ -363,27 +390,29 @@
 
 				</div>
 
-				<div class="grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden">
-
-					<div class="">
-						<rick-card></rick-card>
+				<transition name="slide-fade">
+					<div v-if="expInView" class="grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden">
+	
+						<div class="">
+							<rick-card></rick-card>
+						</div>
+	
+						<div class="">
+							<krilin-sticker></krilin-sticker>
+						</div>
+	
+						<div>
+							<eva></eva>
+						</div>
+	
+						<div class="">
+							<gameboy-css></gameboy-css>
+						</div>
+	
+	
+	
 					</div>
-
-					<div class="">
-						<krilin-sticker></krilin-sticker>
-					</div>
-
-					<div>
-						<eva></eva>
-					</div>
-
-					<div class="">
-						<gameboy-css></gameboy-css>
-					</div>
-
-
-
-				</div>
+				</transition>
 
 
 
@@ -443,6 +472,24 @@
 	.no-backface{
 		backface-visibility: hidden;
 		// transform: rotateX(30deg);
+	}
+
+	/*
+	Enter and leave animations can use different
+	durations and timing functions.
+	*/
+	.slide-fade-enter-active {
+	transition: all 0.5s ease-out;
+	}
+
+	.slide-fade-leave-active {
+	transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+	}
+
+	.slide-fade-enter-from,
+	.slide-fade-leave-to {
+	transform: translateY(120px);
+	opacity: 0;
 	}
 
 

@@ -74,61 +74,55 @@
 
 onMounted(() => {
 
-    nextTick(() => {
+    let bolitaDerecha = document.getElementById('r-b')
+    let bolitaIzq = document.getElementById('l-b')
+    let sonrisa = document.getElementById('sonrisa')
 
-        document.addEventListener('DOMContentLoaded', (e) => {
+    let frame = document.getElementById('frame')
 
-            let bolitaDerecha = document.getElementById('r-b')
-            let bolitaIzq = document.getElementById('l-b')
-            let sonrisa = document.getElementById('sonrisa')
+    let cejas = document.getElementsByClassName('ceja');
+    
 
-            let frame = document.getElementById('frame')
+    frame.addEventListener('click', (e) => {
 
-            let cejas = document.getElementsByClassName('ceja');
+        for (let ceja of cejas) {
+            ceja.classList.toggle('freco');
+        }
 
-            frame.addEventListener('click', (e) => {
+        setTimeout(() => {
 
-                for (let ceja of cejas) {
-                    ceja.classList.toggle('freco');
-                }
+            for (let ceja of cejas) {
+                ceja.classList.toggle('freco');
+            }
 
-                setTimeout(() => {
-
-                    for (let ceja of cejas) {
-                        ceja.classList.toggle('freco');
-                    }
-
-                }, 1000);
-
-            })
-
-            window.addEventListener('mousemove', (e) => {
-
-                let pantallaH = window.innerWidth;
-                let pantallaY = window.innerHeight;
-
-                let porciento = (e.x / pantallaH) * 100;
-
-                let porcientoH = (e.y / pantallaY) * 100;
-
-                // console.log(porciento)
-
-                if (porciento > 3 && porciento < 80) {
-
-                    bolitaDerecha.style.left = `${porciento}%`
-                    bolitaIzq.style.left = `${porciento}%`
-
-                }
-
-                sonrisa.style.borderRadius = `${porcientoH}%`;
-
-
-
-            })
-
-        })
+        }, 1000);
 
     })
+
+    window.addEventListener('mousemove', (e) => {
+
+        let pantallaH = window.innerWidth;
+        let pantallaY = window.innerHeight;
+
+        let porciento = (e.x / pantallaH) * 100;
+
+        let porcientoH = (e.y / pantallaY) * 100;
+
+        // console.log(porciento)
+
+        if (porciento > 3 && porciento < 80) {
+
+            bolitaDerecha.style.left = `${porciento}%`
+            bolitaIzq.style.left = `${porciento}%`
+
+        }
+
+        sonrisa.style.borderRadius = `${porcientoH}%`;
+
+
+
+    })
+
 
 })
 

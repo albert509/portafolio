@@ -1,5 +1,8 @@
 <template>
-    <div class="eva-container py-24">
+    <div class="eva-container py-24" 
+        @mouseenter="($e) => $e.target.classList.toggle('hove-alive')"
+        @mouseleave="($e) => $e.target.classList.toggle('hove-alive')"
+        >
 
         <div class="eva">
             <div class="head">
@@ -30,11 +33,8 @@
     </div>
 </template>
 
-<script setup>
-
-</script>
-
 <style lang="scss" scoped>
+
 * {
     box-sizing: border-box;
 
@@ -53,13 +53,6 @@
         top: 0px;
     }
 }
-
-// body{
-
-//     margin: 0;
-// }
-
-
 
 .eva-container {
     // height: 100%;
@@ -81,10 +74,10 @@
     flex-direction: column;
     position: relative;
     top: 0px;
-    animation-name: flota;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    // animation-name: flota;
+    // animation-duration: 1s;
+    // animation-iteration-count: infinite;
+    // animation-timing-function: ease-in-out;
 }
 
 .head {
@@ -296,10 +289,10 @@
 
         box-shadow: 0px 0px 30px #f1c0e8, 0px 0px 30px transparent;
 
-        animation-name: hondas;
-        animation-duration: 0.8s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
+        // animation-name: hondas;
+        // animation-duration: 0.8s;
+        // animation-iteration-count: infinite;
+        // animation-timing-function: ease-in-out;
     }
 
     .circle3 {
@@ -314,11 +307,11 @@
         //transform: rotateX(75deg);
         box-shadow: 0px 0px 30px #f1c0e8, 0px 0px 30px transparent;
 
-        animation-name: hondas;
-        animation-duration: 0.8s;
-        animation-iteration-count: infinite;
-        animation-delay: 0.5s;
-        animation-timing-function: ease-in-out;
+        // animation-name: hondas;
+        // animation-duration: 0.8s;
+        // animation-iteration-count: infinite;
+        // animation-delay: 0.5s;
+        // animation-timing-function: ease-in-out;
     }
 
     .circle4 {
@@ -333,11 +326,47 @@
         //transform: rotateX(75deg);
         box-shadow: 0px 0px 30px #f1c0e8, 0px 0px 30px transparent;
 
-        animation-name: hondas;
-        animation-duration: 0.8s;
+        // animation-name: hondas;
+        // animation-duration: 0.8s;
+        // animation-iteration-count: infinite;
+        // animation-delay: 1s;
+        // animation-timing-function: ease-in-out;
+    }
+
+}
+
+.hove-alive{
+
+    .eva{
+        animation-name: flota;
+        animation-duration: 1s;
         animation-iteration-count: infinite;
-        animation-delay: 1s;
         animation-timing-function: ease-in-out;
+    }
+
+    .hoverer {
+
+        .circle2 {
+            animation-name: hondas;
+            animation-duration: 0.8s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+        .circle3 {
+            animation-name: hondas;
+            animation-duration: 0.8s;
+            animation-iteration-count: infinite;
+            animation-delay: 0.5s;
+            animation-timing-function: ease-in-out;
+        }
+        .circle4 {
+            animation-name: hondas;
+            animation-duration: 0.8s;
+            animation-iteration-count: infinite;
+            animation-delay: 1s;
+            animation-timing-function: ease-in-out;
+        }
+
     }
 
 }

@@ -79,52 +79,44 @@
 
 onMounted(() => {
 
-    nextTick(() => {
+    let rickCard = document.getElementById('rickCard');
 
-        document.addEventListener('DOMContentLoaded', (e) => {
+    let ojos = document.querySelectorAll('.bolita');
 
-            let rickCard = document.getElementById('rickCard');
+    window.addEventListener('mousemove', (e) => {
 
-            let ojos = document.querySelectorAll('.bolita');
+        let pantallaH = window.innerWidth;
+        let pantallaY = window.innerHeight;
 
-            window.addEventListener('mousemove', (e) => {
+        let porcientoH = (e.x / pantallaH) * 100;
 
-                let pantallaH = window.innerWidth;
-                let pantallaY = window.innerHeight;
+        let porcientoY = (e.y / pantallaY) * 100;
 
-                let porcientoH = (e.x / pantallaH) * 100;
+        // console.log(porciento)
 
-                let porcientoY = (e.y / pantallaY) * 100;
+        if (porcientoY > 44 && porcientoY < 85) {
 
-                // console.log(porciento)
+            ojos.forEach(o => o.style.top = `${porcientoY}%`)
 
-                if (porcientoY > 44 && porcientoY < 85) {
+        }
 
-                    ojos.forEach(o => o.style.top = `${porcientoY}%`)
+        if (porcientoH > 18 && porcientoH < 70) {
 
-                }
+            ojos.forEach(o => o.style.left = `${porcientoH}%`)
 
-                if (porcientoH > 18 && porcientoH < 70) {
+        }
 
-                    ojos.forEach(o => o.style.left = `${porcientoH}%`)
+        let degY = porcientoH > 50 ? 30 : -30;
 
-                }
+        let degX = porcientoY > 50 ? -30 : 30;
 
-                let degY = porcientoH > 50 ? 30 : -30;
-
-                let degX = porcientoY > 50 ? -30 : 30;
-
-                rickCard.style.transform = `rotateY(${degY}deg) rotateX(${degX}deg)`;
-
-            })
-
-            document.addEventListener("mouseleave", (event) => {
-                rickCard.style.transform = 'none';
-            });
-
-        })
+        rickCard.style.transform = `rotateY(${degY}deg) rotateX(${degX}deg)`;
 
     })
+
+    document.addEventListener("mouseleave", (event) => {
+        rickCard.style.transform = 'none';
+    });
 
 })
 
