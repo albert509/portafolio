@@ -6,26 +6,31 @@
 		{
 			title: "TictacDos",
 			Thumb: "/projects/tictacdos.png",
+			link: "https://tacticdos.web.app/",
 			labels: ["Vuejs", "Tailwind", "WebRTC", "Drag&Drop"]
 		},
 		{
 			title: "Landing Sanchte",
 			Thumb: "/projects/sanchte.png",
+			link: "https://sanchte.com/",
 			labels: ["Javascript", "Vuejs", "Tailwind"]
 		},
 		{
 			title: "Landing pinturas Shalom",
 			Thumb: "/projects/shalom.png",
+			link: "https://pinturasshalom.com/",
 			labels: ["Javascript", "Vuejs", "Tailwind"]
 		},
 		{
 			title: "landing Geotracking",
 			Thumb: "/projects/geo.png",
+			link: "https://geotracking.do/",
 			labels: ["Vuejs", "Threejs", "Sass"]
 		},
 		{
 			title: "landing Lugotech",
 			Thumb: "/projects/lugotech.png",
+			link: "https://www.lugotech.com.do/",
 			labels: ["Javascript", "Vuejs", "Fullpagejs"]
 		},
 	])
@@ -342,13 +347,21 @@
 	
 							<div class="relative">
 								<div class="w-full dark:bg-[#001E26] rounded-xl relative overflow-hidden group shadow-lg shadow-[#294952]">
-									<img :src="project.Thumb" class=" object-cover" alt="">
+
+									<img :src="project.Thumb" class=" object-cover group-hover:scale-110 transition-all duration-300" alt="">
+
+									<div class="flex justify-center items-center absolute inset-0 bg-white/40 backdrop-blur-lg dark:bg-[#001E26]/40 opacity-0 w-full h-full group-hover:opacity-100 transition-all duration-300">
+										<a :href="project.link" target="_blank" class="p-3 bg-white/20  rounded-full border-2 text-4xl">
+											<icon:heroicons-outline:external-link class=""/>
+										</a>
+									</div>
+
 								</div>
 		
 								<div class="py-3 px-1">
 		
 									<h3 class="text-lg font-bold">
-										{{ project.title }}
+										{{ project.title }} <icon:heroicons-outline:external-link class="inline"/>
 									</h3>
 		
 									<div class="flex flex-wrap gap-2 text-xs mt-3">
@@ -360,6 +373,7 @@
 									</div>
 								</div>
 							</div>
+							
 	
 						</div>
 					
