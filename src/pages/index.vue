@@ -39,6 +39,8 @@
 	let eva = defineAsyncComponent(() => import('@/components/prototypes/eva.vue'))
 	let krilinSticker = defineAsyncComponent(() => import('@/components/prototypes/krilinSticker.vue'))
 	let gameboyCss = defineAsyncComponent(() => import('@/components/prototypes/gameboyCss.vue'))
+	let dado = defineAsyncComponent(() => import('@/components/prototypes/dado.vue'))
+	let figmaLogo = defineAsyncComponent(() => import('@/components/prototypes/figmaLogo.vue'))
 
 	const expTitle = ref();
 	let expInView = ref<boolean>(false);
@@ -343,7 +345,7 @@
 				<transition name="slide-fade">
 					<div v-if="projectsInView" class="flex flex-wrap">
 	
-						<div class="w-full lg:w-6/12 lg:p-5 py-5 " v-for="(project, i) in projects" :key="i">
+						<div class="w-full lg:w-4/12 lg:p-5 py-5 " v-for="(project, i) in projects" :key="i">
 	
 							<div class="relative">
 								<div class="w-full dark:bg-[#001E26] rounded-xl relative overflow-hidden group shadow-lg shadow-[#294952]">
@@ -397,7 +399,7 @@
 						</h1>
 
 						<p class="relative text-2xl text-slate-500">
-							Things I do just to have fun, most of the visual are done with just css.
+							Things I do just for fun, most of what you see here is done with just css 😁.
 						</p>
 
 					</div>
@@ -405,25 +407,28 @@
 				</div>
 
 				<transition name="slide-fade">
-					<div v-if="expInView" class="grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden">
+					<div v-if="expInView" class="grid grid-cols-1 lg:grid-cols-3 rounded-3xl overflow-hidden">
 	
-						<div class="">
+						<div>
 							<rick-card></rick-card>
 						</div>
 	
-						<div class="">
+						<div>
 							<krilin-sticker></krilin-sticker>
 						</div>
 	
 						<div>
-							<eva></eva>
-						</div>
-	
-						<div class="">
 							<gameboy-css></gameboy-css>
 						</div>
-	
-	
+						<div>
+							<eva></eva>
+						</div>
+						<div>
+							<dado></dado>
+						</div>
+						<div>
+							<figma-logo></figma-logo>
+						</div>
 	
 					</div>
 				</transition>

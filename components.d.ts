@@ -5,7 +5,9 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Dado: typeof import('./src/components/prototypes/dado.vue')['default']
     Eva: typeof import('./src/components/prototypes/eva.vue')['default']
+    FigmaLogo: typeof import('./src/components/prototypes/figmaLogo.vue')['default']
     GameboyCss: typeof import('./src/components/prototypes/gameboyCss.vue')['default']
     'Icon:akarIcons:codepenFill': typeof import('~icons/akar-icons/codepen-fill')['default']
     'Icon:akarIcons:githubFill': typeof import('~icons/akar-icons/github-fill')['default']

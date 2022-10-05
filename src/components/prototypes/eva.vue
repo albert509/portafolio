@@ -5,8 +5,8 @@
         >
 
         <div class="eva">
-            <div class="head">
-                <div class="headScreen">
+            <div class="head border-2 border-black">
+                <div class="headScreen ">
                     <div class="shadow-l"></div>
                     <div class="shadow-r"></div>
                     <div class="eye e-right"></div>
@@ -14,9 +14,9 @@
                 </div>
             </div>
 
-            <div class="body">
-                <div class="arm"></div>
-                <div class="arm2"></div>
+            <div class="body border-2 border-black">
+                <div class="arm border-2 border-black"></div>
+                <div class="arm2 border-2 border-black"></div>
             </div>
 
             <div class="hoverer">
@@ -193,7 +193,7 @@
     background-color: #D7D7D7;
 
     height: 230px;
-    width: 170px;
+    width: 150px;
 
     box-shadow: inset 10px 0px 10px rgba(163, 163, 163, .3),
         inset 10px 0px 20px rgba(163, 163, 163, 1),
@@ -201,16 +201,16 @@
 
     margin-top: 5px;
 
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
 
     .arm {
         position: absolute;
-        top: 13px;
-        left: -40px;
+        top: 20px;
+        left: -35px;
         background-color: #D7D7D7;
 
         height: 150px;
@@ -223,8 +223,8 @@
 
     .arm2 {
         position: absolute;
-        top: 13px;
-        right: -40px;
+        top: 20px;
+        right: -35px;
         background-color: #D7D7D7;
 
         height: 150px;
@@ -370,4 +370,6 @@
     }
 
 }
+
+
 </style>

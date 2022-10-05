@@ -1,5 +1,5 @@
 <template>
-    <div class="card-container text-black flex justify-center bg-[#9DB19C] py-10">
+    <div class="card-container text-black flex h-full justify-center bg-[#9DB19C] py-10">
 
         <div class="movingCard-back">
             <div class="octagono scale-down-to-card"></div>
