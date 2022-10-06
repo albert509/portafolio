@@ -149,7 +149,7 @@
 			<!-- <h1 class="fixed top-0 left-0 origin-bottom-left rotate-90 text-7xl font-bold text-slate-700/10">|||||||||||||||||||||||||</h1> -->
 
 
-			<div class="container mx-auto px-4 pt-20 pb-6">
+			<div class="container mx-auto px-4 2xl:px-28 pt-20 pb-6">
 
 				<div class="grid grid-cols-1 grid-rows-1 perspect">
 
@@ -432,6 +432,13 @@
 	
 					</div>
 				</transition>
+
+				<footer class="px-3 py-5 flex justify-center items-center">
+
+					<img src="@/assets/me.png" class="h-7 mr-3" alt="">
+					<h3>Luis Alberto - {{ (new Date()).getFullYear() }} -</h3>
+
+				</footer>
 
 
 

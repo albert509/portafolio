@@ -6,7 +6,7 @@
                 <div 
                     v-for="(side, i) in sides" 
                     :class="[
-                        'grid place-content-center side rounded-2xl',
+                        'grid place-content-center border-2 side rounded-2xl',
                         side
                     ]">
 

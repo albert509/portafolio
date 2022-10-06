@@ -1,5 +1,5 @@
 <template>
-    <div class="k-container text-black p-16">
+    <div class="k-container text-black p-16 bg-[#e9d8a6]">
 
         <div id="frame" class="frame">
 
@@ -145,7 +145,7 @@ onMounted(() => {
 
     // padding: 16px;
 
-    background: #e9d8a6;
+    // background: #e9d8a6;
 
 }
 

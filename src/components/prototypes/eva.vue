@@ -1,5 +1,5 @@
 <template>
-    <div class="eva-container py-24" 
+    <div class="eva-container py-24 bg-[#5A6169]" 
         @mouseenter="($e) => $e.target.classList.toggle('hove-alive')"
         @mouseleave="($e) => $e.target.classList.toggle('hove-alive')"
         >
@@ -63,7 +63,7 @@
 
     flex-direction: column;
 
-    background-color: #5A6169;
+    // background-color: #5A6169;
 }
 
 .eva {
