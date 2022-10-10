@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     'Icon:akarIcons:linkedinBoxFill': typeof import('~icons/akar-icons/linkedin-box-fill')['default']
     'Icon:akarIcons:twitterFill': typeof import('~icons/akar-icons/twitter-fill')['default']
     'Icon:heroiconsOutline:externalLink': typeof import('~icons/heroicons-outline/external-link')['default']
+    'Icon:mdiDownload': typeof import('~icons/mdi/download')['default']
     KrilinSticker: typeof import('./src/components/prototypes/krilinSticker.vue')['default']
     RickCard: typeof import('./src/components/prototypes/rickCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

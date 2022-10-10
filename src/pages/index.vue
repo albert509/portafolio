@@ -218,6 +218,14 @@
 											<icon:akar-icons:github-fill class="inline"/>
 										</a>
 									</div>
+
+									<div class=" ">
+	
+										<a class="ani block border-2 border-black dark:border-white hover:bg-white hover:text-black select-none cursor-pointer p-3 rounded-xl text-center" href="https://github.com/albert509/albert509/raw/main/cv_spanish.pdf" download>
+											Get my CV <icon:mdi-download class="inline"/>
+										</a>
+
+									</div>
 	
 								</div>
 							</div>
@@ -294,6 +302,10 @@
 						<div id="avatar" class="h-32 w-32 flex justify-center items-center border-4 dark:border-[#001E26] rounded-full dark:bg-[#012A35] absolute inset-y-0 -top-16 no-backface">
 							<img src="@/assets/me.png" class="h-20" alt="">
 						</div>
+
+						<!-- <a class="absolute left-0 top-0 border-4 dark:border-[#001E26] dark:bg-[#012A35] dark:hover:bg-[#012A35]/60 rounded-2xl py-2 px-3" href="https://github.com/albert509/albert509/raw/main/cv_spanish.pdf" download>
+							My CV <icon:mdi-download class="inline"/>
+						</a> -->
 	
 						<!-- <div class="mousePosition"></div> -->
 		
